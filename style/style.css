@@ -244,6 +244,10 @@ header{
     padding: 0;
     justify-content: center;
     align-items: center;
+    transition: transform 0.2s ease;
+}
+.meni-stavka:hover {
+    transform: scale(1.02);
 }
 
 .meni-stavka-slika{
@@ -253,37 +257,35 @@ header{
     margin-right: 30px;
 }
 
-.meni-stavka-tekst{
-    flex-grow: 1;
+.meni-stavka-tekst {
+    width: 100%;
 }
-.meni-stavka-naslov{
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-    align-items: center;
-}
-
 
 .meni-stavka-slika{
     width: 150px;
     height: 150px;
+    
 }
-.meni-stavka-ime{
-    font-size: 35px;
-    width: 300px;
+.meni-stavka-ime {
+    font-size: 32px;
+    font-weight: bold;
 }
-.meni-stavka-sastojci{
-    display: flex;
-    align-items: center;
-    width: 60%;
-    justify-content: center;
-    text-align: center;
+.meni-stavka-sastojci {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #555;
+    text-align: left;
 }
-.meni-stavka-cena{
-    font-size: 25px;
+.meni-stavka-cena {
+    font-size: 24px;
     color: #b8860b;
+    white-space: nowrap;
 }
-
+.meni-stavka-gore {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 /* footer */
 
 footer{
@@ -387,29 +389,38 @@ footer ul{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 120px;
-    gap: 20px;
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 250px;
+    margin-top: 200px;
+    gap: 50px;
+    padding: 60px;
+    border-radius: 25px;
+    margin-bottom: 80px;
+    background-color: #f9f9f9;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 60px;
 }
 
 .image-container img {
 width: 600px;
 height: auto;
 border-radius: 15px; 
+object-fit: cover;
 }
 
 .contact-form {
 display: flex;
 flex-direction: column;
 gap: 15px;
-width: 300px;
+width: 350px;
 }
 
 .contact-form h2 {
 color: #d35400; 
 text-align: center;
+font-size: 32px;
+margin-bottom: 10px;
 }
 
 .contact-form label {
@@ -431,33 +442,37 @@ height: 100px;
 }
 
 .contact-form button {
-padding: 10px;
+padding: 12px;
 background-color: #d35400; 
 color: #fff;
 border: none;
-border-radius: 10px;
+border-radius: 12px;
 cursor: pointer;
-font-size: 16px;
+font-size: 17px;
 font-weight: bold;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
   
 .contact-form button:hover {
     filter: brightness(90%);
+     transform: translateY(-2px);
 }
   
-
+/*O nama*/
 .o-nama {
     display: flex; 
     align-items: center; 
     justify-content: space-between; 
-    padding: 171px; 
+    padding: 120px 150px; 
     margin-top: 100px;
+    gap: 60px;
 }
 
 .o-nama-slika img {
     max-width: 100%; 
     height: auto; 
     padding-right: 50px; 
+    border-radius: 20px;
 }
 
 .o-nama-desno {
@@ -466,16 +481,91 @@ font-weight: bold;
 }
 
 .o-nama-desno h3 {
-    margin-bottom: 10px; 
-    font-size: 30px;
+    margin-bottom: 25px;
+    font-size: 42px;
+    color: #4a2b03;
 }
 
 .o-nama-desno p {
-    line-height: 1.8; 
-    margin: 0; 
+    line-height: 1.7;
     font-size: 22px;
+    max-width: 700px;
+}
+/* O nama proces */
+
+.o-nama-proces {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin: 100px 150px;
 }
 
+.proces-tekst {
+    flex: 1;
+}
+
+.proces-tekst h3 {
+    font-size: 36px;
+    color: #4a2b03;
+    margin-bottom: 25px;
+}
+
+.proces-tekst p {
+    font-size: 22px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    max-width: 700px;
+}
+
+.proces-slika img {
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+/* O nama zaposleni */
+
+.zaposleni {
+    margin: 100px 150px;
+    text-align: center;
+}
+
+.zaposleni h3 {
+    font-size: 36px;
+    color: #4a2b03;
+    margin-bottom: 50px;
+}
+
+.zaposleni-wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.zaposleni-kartica {
+    flex: 1;
+    background-color: #b8860b;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.zaposleni-kartica img {
+    width: 100%;
+    max-width: 220px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.zaposleni-kartica h4 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.zaposleni-kartica p {
+    font-size: 18px;
+}
+
+
+/*Galerija*/
 .galerija {
     display: flex;
     flex-direction: column;
@@ -497,14 +587,128 @@ font-weight: bold;
     height: auto !important;
     border-radius: 5px; 
     overflow: hidden;
-    transition: all 0.5s ease-in;
+    transition: transform 0.4s ease, opacity 0.4s ease;
     opacity: 0.6;
 }
 .galerija-slika{
     width: 32%;
 }
 .galerija-slika img:hover{
-    scale: 100%;
+    transform: scale(1.08);
     opacity: 1;
 }
 
+/* RECENZIJE */
+
+.recenzije {
+    margin: 100px 150px;
+    text-align: center;
+}
+
+.recenzije-naslov {
+    font-size: 40px;
+    color: #4a2b03;
+    margin-bottom: 60px;
+}
+
+.recenzije-wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.recenzija-kartica {
+    background-color: #b8860b;
+    border-radius: 20px;
+    padding: 30px;
+    flex: 1;
+    position: relative;
+}
+
+.recenzija-kartica i.fa-quote-left {
+    font-size: 30px;
+    color: #4a2b03;
+    margin-bottom: 15px;
+}
+.recenzija-kartica i.fa-quote-right{
+     font-size: 30px;
+    color: #4a2b03;
+    margin-bottom: 15px;
+}
+
+.recenzija-tekst {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.recenzija-ime {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.recenzija-zvezdice i {
+    color: #4a2b03;
+    font-size: 18px;
+}
+/* UKUS PICE – TEKST + SLIKA */
+
+.ukus {
+    margin: 100px 0;
+}
+
+.ukus-wrap {
+    margin-left: 150px;
+    margin-right: 150px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.ukus-tekst {
+    flex: 1;
+}
+
+.ukus-tekst h2 {
+    font-size: 42px;
+    color: #4a2b03;
+    margin-bottom: 30px;
+}
+
+.ukus-tekst p {
+    font-size: 22px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.ukus-slika {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ukus-slika img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.butt-zip {
+    background-color: #f8f1c3; 
+    border: 2px solid #4a2b03;
+}
+
+.butt-zip a {
+    color: #4a2b03;
+    font-weight: 600;
+}
+
+.butt-zip:hover {
+    background-color: #4a2b03;
+}
+
+.butt-zip:hover a {
+    color: #f8f1c3;
+}
